@@ -1,5 +1,11 @@
-require "user_requirement.rb"
-require "cat.rb"
+#Import code from class files into the index file
+require_relative "classes/cat.rb"
+require_relative "classes/occupancy.rb"
+require_relative "classes/cleaning.rb"
+require_relative "classes/location.rb"
+require_relative "classes/breed.rb"
+require_relative "classes/color.rb"
+
 
 #Setup a database of cats
 #Each cat should be a hash of the following criteria
@@ -9,18 +15,15 @@ require "cat.rb"
  #4. Color (symbol)
  #5. If the cat is toilet trained (boolean)
 
-felix = Cat.new("Sydney", "relaxed", "Shorthair", "black", true)  
-garfield = Cat.new("Dubbo", "needy", "shorthair", "ginger", "true")  
-fluffy = Cat.new("Wollongong", "relaxed", "Persian", "black", false)  
-max = Cat.new("Sydney", "veryneedy", "sphinx", "white", true)  
-princess = Cat.new("Sydney", "needy", "Persian", "white", true)  
+felix = Cat.new("Sydney", "relaxed", "shorthair", "black", true)  
+garfield = Cat.new("Dubbo", "needy", "shorthair", "ginger", true)  
+fluffy = Cat.new("Wollongong", "relaxed", "persian", "black", false)  
+max = Cat.new("Sydney", "very needy", "sphinx", "white", true)  
+princess = Cat.new("Sydney", "needy", "persian", "white", true)  
 simba = Cat.new("Newcastle", "relaxed", "shorthair", "ginger", true)  
 
 #Setup an array to store our cats
 cats = [felix, garfield, fluffy, max, princess, simba]
-  
-
-
 
 #Write some code which pulls out the options based on the cats we've defined
 breeds =  ["shorthair", "persian", "sphinx"]
@@ -28,42 +31,56 @@ colors =  ["black", "white", "ginger", "tortise shell"]
 cities = ["Sydney", "Wollongong", "Newcastle", "Dubbo"]
 toilet_trained = ["yes", "no"]
 
+#Instantiate our criteria gathering information from the user 
+criteria_1 = Cleaning.new(:toilet_trained, "if you need the cat to be toilet trained", "yes or no")
+criteria_2 = Occupancy.new(:personality, "the average hours per week that you expect the cat to be alone", "a number between 1 and 100")
+criteria_3 = Location.new(:location, "the city you live in", cities.join(", "))
+criteria_4 = Breed.new(:breed, "about other breeds you like", breeds)
+criteria_5 = Color.new(:color, "the color of you cat you like", colors)
 
-####################################################################################################################
+#Setup an array to store our criteria
+user_criteria = [
+    criteria_1,
+    criteria_2,
+    criteria_3,
+    criteria_4,
+    criteria_5    
+]
 
-#Define our criteria
-criteria_1 = Criteria.new(:location, "the city you live in", cities.join(", "), false, String)
-criteria_2 = Criteria.new(:occupancy, "the average hours per week that you expect the cat to be alone", "a number between 1 and 100", true, Integer)
-criteria_3 = Criteria.new(:breed, "the type of cat breeds you like", "the following breeds are available #{breeds}", false, String)
-criteria_4 = Criteria.new(:color, "the color of you cat you like", colors, false, String)
-criteria_5 = Criteria.new(:toilet_trained, "if you need the cat to be toilet trained", "yes or no", true, String)
-
-criteria = [criteria_1, criteria_2, criteria_3, criteria_4, criteria_5]
-
-def print_options (criteria_description, criteria_options)
-    puts "Please let me know #{criteria_description}. \nPlease type your answer according to one of the following options: #{criteria_options}."
-end
-
-for item in criteria
-    print_options(item.criteria_description, item.criteria_options)
-    if item.var_type == String
-        item.input = gets.chomp
-        while !item.criteria_options.include? item.input
-            puts "Sorry that was an invalid option."
-            print_options(item.criteria_description, item.criteria_options)
-            item.input = gets.chomp
+#Define a method which takes a cat database and user criteria as arguments returns an array of suitable cats as per the users criteria
+#The cats within the returned array should exactly match the users requirements on the mandatory criteria
+#The method should record for each cat the amount of preferences that match the users criteria. The returned array should sorted by the cats that match the most criteria first.
+def allocate_cats (cats, user_criteria)
+    #Declare an array to capture the cats that will be returned to the user
+    suitable_cats = []
+    #First loop through each of the user criteria, adding the cat to the suitable cats array if it meets or the mandatory criteria or taking it away if it doesn't 
+    for criteria in user_criteria
+        for cat in cats
+            p cat
+            if (criteria.mandatory == true and criteria.check_match(cat.send(criteria.cat_characteristic_match)))
+                cat.criteria_matches += 1
+                p "jackpot i've got another match on #{criteria.cat_characteristic_match}. i've got this many matches now #{cat.criteria_matches}"
+                if !suitable_cats.include? cat
+                    suitable_cats.push(cat)
+                end
+            elsif (criteria.mandatory == true and !criteria.check_match(cat.send(criteria.cat_characteristic_match)))
+                if suitable_cats.include? cat
+                    suitable_cats.delete(cat)
+                end
+            elsif (criteria.check_match(cat.send(criteria.cat_characteristic_match)))
+                cat.criteria_matches += 1
+                p "jackpot i've got another match on #{criteria.cat_characteristic_match}. i've got this many matches now #{cat.criteria_matches}"
+            end
         end
-    elsif item.var_type == Integer
-        item.input = gets.to_i
-        #what happens if the user puts in a word
-        while (item.input < 1 or item.input > 100)
-            puts "Sorry that was an invalide option"
-            print_options(item.criteria_description, item.criteria_options)
-            item.input = gets.to_i
-        end 
     end
+    suitable_cats
 end
 
+results = allocate_cats(cats, user_criteria)
+p results
+for cat in results
+    p cat.criteria_matches
+end
 
 
 

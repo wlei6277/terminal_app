@@ -8,17 +8,26 @@
 
 class Criteria
     
-    attr_accessor :name, :criteria_description, :criteria_options
+    attr_accessor :cat_characteristic_match, :criteria_description, :criteria_options, :mandatory
 
-    def initialize (name, criteria_description, criteria_options, input)
-        @name = name
+    def initialize (cat_characteristic_match, criteria_description, criteria_options)
+        @cat_characteristic_match = cat_characteristic_match
         @criteria_description = criteria_description
         @criteria_options = criteria_options
-        @input = nil
+        @mandatory = false
+        @user_input = ""
     end
 
     def print_options (criteria_description, criteria_options)
-        puts "Please let me know #{@criteria_description}. \nPlease type your answer according to one of the following options: #{@criteria_options}."
+        puts "Please let me know #{@criteria_description}.\nPlease type your answer according to one of the following options: #{@criteria_options}."
+    end
+
+    def check_match (characteristic)
+        if characteristic == @user_input
+            true
+        else
+            false
+        end
     end
 
 end
