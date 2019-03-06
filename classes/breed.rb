@@ -2,12 +2,15 @@ require_relative "criteria.rb"
 #Define a class Breed which is a child of the Criteria class
 #Breed should have a special initialize function to take input from the user about which types of breeds they like
 #The init function should loop until the user has entered a valid option
+#Redefine the print options method for the Breed class to show the user how many breeds they have selected
+#Redefine the check_match method so that it checks all breeds   
+
 class Breed < Criteria 
     attr_accessor :cat_characteristic_match, :criteria_description, :criteria_options, :user_inputs
     def initialize(cat_characteristic_match, criteria_description, criteria_options)
         super(cat_characteristic_match, criteria_description, criteria_options)
         @user_inputs = []
-        puts "Please let me know about cat breeds you like.\nIf you don't care simply type in the following phrase \"none\", otherwise please type your answer according to one of the following options: #{@criteria_options}."
+        puts "Now i'm going to ask you about breeds you like.\nIf you have no preference type in \"none\", otherwise please type your answer according to one of the following options: #{@criteria_options}."
         input = gets.chomp
         if (input != "none" and !@criteria_options.include? input)
             puts "Sorry that was an invalid option"
@@ -28,7 +31,7 @@ class Breed < Criteria
     end
 
     def print_options (criteria_description, criteria_options)
-        puts "Here are the breeds you like #{@user_inputs}. \nPlease let me know #{@criteria_description}.\nIf you don't care to let us know another breed you'd prefer simply type in the following phrase \"none\", otherwise please type your answer according to one of the following options: #{@criteria_options}."
+        puts "Here are the breeds you have told you liked #{@user_inputs}.\nPlease let me know about any additional breeds you like otherwise type \"none\".\nHere are the available following options: #{@criteria_options}."
     end
 
     def check_match(cat_breed)

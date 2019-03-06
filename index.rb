@@ -7,6 +7,10 @@ require_relative "classes/breed.rb"
 require_relative "classes/color.rb"
 
 
+#First display the greeting message to the user
+puts "Welcome to Rescue Cats Matcher! We're going to ask you some questions to find you're perfect cat"
+
+
 #First we build our database of cats by instantiating a number of objects
 #Each cat object has the following attiributes
  #1. A name (string)
@@ -25,7 +29,8 @@ princess = Cat.new("Princess", "Sydney", "needy", "persian", "white", true)
 simba = Cat.new("Simba", "Newcastle", "relaxed", "shorthair", "ginger", true)  
 
 #Setup an array to store all of our cat objects
-cats = [felix, garfield, fluffy, max, princess, simba]
+cats = [snoop, felix, garfield, fluffy, max, princess, simba]
+
 
 #Setup some options for the user criteria
 breeds =  ["shorthair", "persian", "sphinx"]
@@ -121,7 +126,7 @@ sorted_cats = sort_cats(filtered_cats)
 #If the user wants to adopt the cat exit the program
 def pick_cats(sorted_cats)
     if sorted_cats.length == 0
-        puts "Sorry there were no cats available which meet your manadorty criteria (toilet training status and personality). Come back another time."
+        puts "Sorry there were no cats available which meet your mandatory criteria (toilet training status and personality). Come back another time."
     else
         for cat in sorted_cats
             cat.display_details
