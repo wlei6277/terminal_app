@@ -5,7 +5,7 @@ require_relative "classes/cleaning.rb"
 require_relative "classes/location.rb"
 require_relative "classes/breed.rb"
 require_relative "classes/color.rb"
-
+require "colorize"
 
 #First display the greeting message to the user
 puts "Welcome to Rescue Cats Matcher! We're going to ask you some questions to find you're perfect cat"
@@ -115,6 +115,7 @@ filtered_cats = filter_cats(ranked_cats)
 #The method should loop through each cat placing the cats which match the most criteria at the front of the array.
 def sort_cats(suitable_cats)
     suitable_cats.sort_by! {|cat| cat.criteria_matches}
+    suitable_cats.reverse
 end
 
 #Declare an array to uses our sort_cats method to return a new array of sorted cats 
@@ -130,10 +131,10 @@ def pick_cats(sorted_cats)
     else
         for cat in sorted_cats
             cat.display_details
-            puts "Do you want to adopt #{cat.name}? Please enter yes if you want to or no if you don't."
+            puts "Do you want to adopt #{cat.name}? Please enter yes if you want to adopt or no if you don't.".colorize(:color => :black, :background => :white)
             input = gets.chomp
             while (input != "yes" and input != "no")
-                puts "Sorry that was an invalid option. Please enter yes if you want to or no if you don't."
+                puts "Sorry that was an invalid option. Please enter yes if you want to adopt or no if you don't.".colorize(:color => :black, :background => :white)
                 input = gets.chomp
             end
             if input == "yes"

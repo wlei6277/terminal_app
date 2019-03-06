@@ -7,7 +7,8 @@ class Color < Criteria
     def initialize(cat_characteristic_match, criteria_description, criteria_options)
         super(cat_characteristic_match, criteria_description, criteria_options)
         @user_inputs = []
-        puts "Now i'm going to ask you about colors you like.\nIf you have no preference type in \"none\", otherwise please type your answer according to one of the following options: #{@criteria_options}."
+        puts "Now i'm going to ask you about colors you like."
+        puts "If you have no preference type in \"none\", otherwise please type your answer according to one of the following options: #{@criteria_options}.".colorize(:color => :black, :background => :white)
         input = gets.chomp
         if (input != "none" and !@criteria_options.include? input)
             puts "Sorry that was an invalid option"
@@ -28,7 +29,8 @@ class Color < Criteria
     end
 
     def print_options (criteria_description, criteria_options)
-        puts "Here are the colors you have told you liked #{@user_inputs}.\nPlease let me know about any additional colors you like otherwise type \"none\". \nHere are the available following options: #{@criteria_options}."
+        puts "Here are the colors you have told you liked #{@user_inputs}."
+        puts "Please let me know about any additional colors you like otherwise type \"none\". \nHere are the available following options: #{@criteria_options}.".colorize(:color => :black, :background => :white)
     end
 
     def check_match (cat_color)

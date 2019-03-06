@@ -7,10 +7,10 @@ class Location < Criteria
     def initialize(cat_characteristic_match, criteria_description, criteria_options)
         super(cat_characteristic_match, criteria_description, criteria_options)
         @user_input = "null"
-        while !@criteria_options.include? @user_input
+        while (!@criteria_options.include? @user_input or @user_input == "")
             self.print_options(@criteria_description, @criteria_options)
             @user_input = gets.chomp
-            if !@criteria_options.include? @user_input
+            if (!@criteria_options.include? @user_input or @user_input == "")
                 puts "Sorry that was an invalid option."
             end
         end
