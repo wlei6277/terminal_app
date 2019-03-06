@@ -16,7 +16,7 @@ class Occupancy < Criteria
                 puts "Sorry that was an invalid option."
             else
                 if @occupancy < 10
-                    @user_input = "psychotic"
+                    @user_input = "extremely needy"
                 elsif @occupancy < 20
                     @user_input = "very needy"
                 elsif @occupancy < 40

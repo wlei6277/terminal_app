@@ -5,6 +5,8 @@
     #3. The users preferenece for the breed of the cat
     #4. The users preference for the color of the cat
     #5. Wether the user requires the cat to be toilet trained
+#Inlcude a method to print information to user when prompting them to input information
+#Include a method to check if the characteristic for a given cat is equal to the users input for that same criteria
 
 class Criteria
     
