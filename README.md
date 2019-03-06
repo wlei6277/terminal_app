@@ -100,40 +100,52 @@ Screenshots
 
 *User putting in information about preferences*
 
-![](https://github.com/wlei6277/terminal_app/blob/master/docs/IMG_initial_code_design.jpeg "")
-
-
+![](https://github.com/wlei6277/terminal_app/blob/master/docs/Screenshot%201.PNG"")
 
 *Example of user being shown an eligible cat to adopt*
 
-![Screenshot 2](/Users/lyssfitz/Desktop/terminal_app/terminal_app/docs/Screenshot 2.PNG)
+![](https://github.com/wlei6277/terminal_app/blob/master/docs/Screenshot%202.PNG"")
 
 *Another example of user being shown eligible cat to adopt*
 
-![Screenshot 3](/Users/lyssfitz/Desktop/terminal_app/terminal_app/docs/Screenshot 3.PNG)
+![](https://github.com/wlei6277/terminal_app/blob/master/docs/Screenshot%203.PNG"")
 
 DESIGN & PLANNING PROCESS
 
 Idea brainstorming for app - evidence
 
-![IMG_app_options](/Users/lyssfitz/Desktop/terminal_app/terminal_app/docs/IMG_app_options.jpg)
+![](https://github.com/wlei6277/terminal_app/blob/master/docs/IMG_app_options.jpg"")
+
+![](https://github.com/wlei6277/terminal_app/blob/master/docs/IMG_initial_code_design.jpeg "")
+
+![](https://github.com/wlei6277/terminal_app/blob/master/docs/IMG_initial_high_level_design.jpeg"")
+
+![](https://github.com/wlei6277/terminal_app/blob/master/docs/IMG_initial_project_plan.jpeg"")
+
+![](https://github.com/wlei6277/terminal_app/blob/master/docs/IMG_initial_variable_outline.jpeg"")
+
+
+
+
 
 app User/Workflow diagram 
 
-![IMG_workflow_diagram](/Users/lyssfitz/Desktop/terminal_app/terminal_app/docs/IMG_workflow_diagram.jpeg)
+![](https://github.com/wlei6277/terminal_app/blob/master/docs/IMG_workflow_diagram.jpeg)
+
+
 
 Project Plan & Timeline (Trello board)
 
-![Tello board](/Users/lyssfitz/Desktop/terminal_app/terminal_app/docs/Tello board.png)
+![](https://github.com/wlei6277/terminal_app/blob/master/docs/Tello%20board.png"")
 
 
 
 Team communication on slack
 
-![IMG_slack_communication](/Users/lyssfitz/Desktop/terminal_app/terminal_app/docs/IMG_slack_communication.png)
+![](https://github.com/wlei6277/terminal_app/blob/master/docs/IMG_slack_communication.png"")
 
 
 
 User stories
 
-![IMG_user_stories](/Users/lyssfitz/Desktop/terminal_app/terminal_app/docs/IMG_user_stories.jpeg)
+![](https://github.com/wlei6277/terminal_app/blob/master/docs/IMG_user_stories.jpeg"")
