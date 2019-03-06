@@ -98,28 +98,40 @@ INSTRUCTIONS FOR USE
 
 Screenshots
 
-**PLEASE INSERT** 
+*User putting in information about preferences*
 
+![Screenshot 1](/Users/lyssfitz/Desktop/terminal_app/terminal_app/Screenshot 1.PNG)
 
+*Example of user being shown an eligible cat to adopt*
+
+![Screenshot 2](/Users/lyssfitz/Desktop/terminal_app/terminal_app/docs/Screenshot 2.PNG)
+
+*Another example of user being shown eligible cat to adopt*
+
+![Screenshot 3](/Users/lyssfitz/Desktop/terminal_app/terminal_app/docs/Screenshot 3.PNG)
 
 DESIGN & PLANNING PROCESS
 
 Idea brainstorming for app - evidence
 
-![IMG_app_options](/Users/lyssfitz/Desktop/terminal_app/terminal_app/project photos/IMG_app_options.jpg)
+![IMG_app_options](/Users/lyssfitz/Desktop/terminal_app/terminal_app/docs/IMG_app_options.jpg)
 
 app User/Workflow diagram 
 
-![IMG_workflow_diagram](/Users/lyssfitz/Desktop/terminal_app/terminal_app/project photos/IMG_workflow_diagram.jpeg)
-
-
-
-
+![IMG_workflow_diagram](/Users/lyssfitz/Desktop/terminal_app/terminal_app/docs/IMG_workflow_diagram.jpeg)
 
 Project Plan & Timeline (Trello board)
 
+![Tello board](/Users/lyssfitz/Desktop/terminal_app/terminal_app/docs/Tello board.png)
 
 
-![Tello board](/Users/lyssfitz/Desktop/terminal_app/terminal_app/Tello board.png)
 
-![IMG_slack_communication](/Users/lyssfitz/Desktop/terminal_app/terminal_app/project photos/IMG_slack_communication.png)
+Team communication on slack
+
+![IMG_slack_communication](/Users/lyssfitz/Desktop/terminal_app/terminal_app/docs/IMG_slack_communication.png)
+
+
+
+User stories
+
+![IMG_user_stories](/Users/lyssfitz/Desktop/terminal_app/terminal_app/docs/IMG_user_stories.jpeg)
