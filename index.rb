@@ -8,7 +8,7 @@ require_relative "classes/color.rb"
 require "colorize"
 
 #First display the greeting message to the user
-puts "Welcome to Rescue Cats Matcher! We're going to ask you some questions to find you're perfect cat"
+puts "Welcome to Rescue Cats Matcher! We're going to ask you some questions to find your perfect cat"
 
 
 #First we build our database of cats by instantiating a number of objects
