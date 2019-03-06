@@ -100,7 +100,9 @@ Screenshots
 
 *User putting in information about preferences*
 
-![Screenshot 1](/Users/lyssfitz/Desktop/terminal_app/terminal_app/Screenshot 1.PNG)
+![](https://github.com/wlei6277/terminal_app/blob/master/docs/IMG_initial_code_design.jpeg "")
+
+
 
 *Example of user being shown an eligible cat to adopt*
 
