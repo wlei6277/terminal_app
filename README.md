@@ -20,29 +20,65 @@ Purpose
 
   
 
-
-
 Functionality
 
 1. The app takes information from the user on a number of specified criteria.
-
 2. The app then loops through cat database, recording if each cat meets the criteria of the user.
-
 3. The app filters all cats which do not match on mandatory criteria.
-
 4. The app then ranks any remaining cats according to how many of the user's criteria are met.
-
 5. If there is at least one cat that meets the user's mandatory criteria, the user is presented with the eligible cats in order of closest match. 
-
 6. User can choose to adopt or not adopt a cat. 
-
 7. If the user does not choose to adopt any matching cats, a message prints to the screen.
-
 8. If there are no cats that match the user's mandatory criteria a message prints to the screen informing the user of this. 
 
-   
 
-Instructions for use
+
+Code Structure
+
+* Four key methods are used in the code. 
+
+1. rank_cats - this takes the cat database and user criteria as arguments and loops through the cat database to record the matching between each cat and the user requirements. 
+2. filter_cats - this takes an array of cats which have been matched against user criteria and returns an array of cats which meet the exact match requirements (toilet_trained and cat personality.) 
+3. sort_cats - this takes the filtered cats array as an argument and orders the cats according to the amount of criteria they matched (the cat that matched the most of the user's criteria will be the first in the array).
+4. pick_cats - this takes the sorted cats as an argument and when called prompts the user to pick a cat for adoption. 
+
+* There are two main parent class types and five child classes (these have been put into separate files for readability and testing purposes)
+  * Each cat in the database is an object which is instantiated at the beginning of the program.
+  * Each criteria is an object. When each object is instantiated the user is prompted for information. 
+
+
+
+Ethical Considerations
+
+* By definition, the rescue cats are in the shelter because they have already been abandoned.
+
+* The shelter will want to minimise the chance of any adopted cat being abandoned again so the app tries to match potential owners with the best matching cats.
+
+* To improve the chance of a good match, two of the criteria require an exact match in order to be displayed to the user:
+
+  1. The cat must meet the user's preferences for toilet trained. 
+  2. The cat must meet the user's lifestyle requirements. To determine this, the hours that the user will leave the cat alone needs to match the cat's personality type. 
+
+  
+
+Scope for further development 
+
+* Further features for the user (cat adopter) could include:
+
+  - Show pictures of the matched cat to the user
+  - Enable the user to save a profile in a database so that they can be emailed if a new matching cat is entered into the system. 
+  - Improve user interface.
+
+* This app could also be further developed on the organisation (cat shelter) side e.g.
+
+  * Enable the cat shelter to upload details of cats into the database in line with the specified criteria.
+  * Enable the cat shelter to view all currently held cats. (some starter code is in the file user_start.rb but needs to be updated to match data types used in the main app files as well as other updates).
+  * Enable the cat shelter to delete cats from the database eg. once adopted.
+  * Enable the cat shelter to edit cat details. 
+
+  
+
+INSTRUCTIONS FOR USE
 
 1. Run the ruby index.rb file in your shell/ terminal.
 2. The app will prompt you to enter information in a specified format. If you do not enter in the specified format, you will be asked to input the value again.
@@ -62,7 +98,7 @@ Instructions for use
 
 Screenshots
 
-
+**PLEASE INSERT** 
 
 
 
@@ -70,42 +106,20 @@ DESIGN & PLANNING PROCESS
 
 Idea brainstorming for app - evidence
 
-
-
-
+![IMG_app_options](/Users/lyssfitz/Desktop/terminal_app/terminal_app/project photos/IMG_app_options.jpg)
 
 app User/Workflow diagram 
 
+![IMG_workflow_diagram](/Users/lyssfitz/Desktop/terminal_app/terminal_app/project photos/IMG_workflow_diagram.jpeg)
 
 
 
 
 
-
-Project Plan & timeline
-
+Project Plan & Timeline (Trello board)
 
 
 
+![Tello board](/Users/lyssfitz/Desktop/terminal_app/terminal_app/Tello board.png)
 
-Screenshots of Trello board
-
-
-
-- A link to your GitHub repository
-
-- - Ensure the repository (*repo*) is accessible by your Educators
-
-- Description of the *app*, including,
-
-- - Purpose
-  - Functionality
-  - Instructions for use
-  - Screenshots
-
-- Details of design & planning process including,
-
-- - Evidence of *app* idea brainstorming sessions
-  - *app* User/Workflow diagram
-  - Project plan & timeline
-  - Screenshots of Trello board(s)
+![IMG_slack_communication](/Users/lyssfitz/Desktop/terminal_app/terminal_app/project photos/IMG_slack_communication.png)
